@@ -12,7 +12,7 @@ const value = computed(() =>
   images.map((image) => {
     return {
       source: image,
-      alt: 'Property Image'
+      alt: 'laboratory Image'
     }
   })
 )
@@ -23,7 +23,7 @@ const value = computed(() =>
     <template #item="{ item: image }">
       <!-- TODO: Uncomment this line when unsplash API is working again -->
       <!-- <img :src="image.source" :alt="image.alt" class="image" /> -->
-      <img src="@/assets/images/house.jpg" :alt="image.alt" class="image" />
+      <img src="@/assets/images/sala-bancada-catolica-sc.jpg" :alt="image.alt" class="image" />
     </template>
   </Galleria>
 </template>

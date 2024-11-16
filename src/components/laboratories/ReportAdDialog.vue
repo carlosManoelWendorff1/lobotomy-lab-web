@@ -45,8 +45,8 @@ defineExpose({
   <BaseDialog v-bind="$attrs" v-model:visible="isVisible" class="w-9 md:w-6 xl:w-3">
     <template #header>
       <div class="header">
-        <h2>{{ $t('properties.reportAd') }}</h2>
-        <p>{{ $t('properties.reportAdIrregularitiesPrompt') }}</p>
+        <h2>{{ $t('laboratories.reportAd') }}</h2>
+        <p>{{ $t('laboratories.reportAdIrregularitiesPrompt') }}</p>
       </div>
     </template>
     <div class="grid">
@@ -70,7 +70,7 @@ defineExpose({
         <BaseInputTextarea
           v-model="description"
           :label="t('fields.description')"
-          :placeholder="t('properties.reportDescriptionPlaceholder')"
+          :placeholder="t('laboratories.reportDescriptionPlaceholder')"
           :error="errors.description"
           rows="4"
         />
@@ -78,7 +78,7 @@ defineExpose({
       <div class="col-12 flex gap-2">
         <BaseCheckbox
           v-model="dataSharingConsent"
-          :label="$t('properties.dataSharingConsent')"
+          :label="$t('laboratories.dataSharingConsent')"
           :error="errors.dataSharingConsent"
           :value="false"
         />

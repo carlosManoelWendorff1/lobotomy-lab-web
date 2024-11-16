@@ -1,22 +1,22 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router'
 import BaseGallery from '@/components/wrappers/misc/BaseGallery.vue'
-import type Property from '@/types/models/Property'
+import type Laboratory from '@/types/models/Laboratory'
 
-const { property } = defineProps<{ property: Property | null; showExtendedInfo?: boolean }>()
+const { laboratory } = defineProps<{ laboratory: Laboratory | null; showExtendedInfo?: boolean }>()
 
 const router = useRouter()
 
-function redirectToPropertyDetails() {
-  router.push({ name: 'property-details', params: { id: property?.id } })
+function redirectToLaboratoryDetails() {
+  router.push({ name: 'laboratory-details', params: { id: laboratory?.id } })
 }
 </script>
 
 <template>
-  <BaseCard v-if="property" class="property-card">
+  <BaseCard v-if="laboratory" class="laboratory-card">
     <template #header>
       <BaseGallery
-        :images="property.imageSources"
+        :images="laboratory.imageSources"
         :show-thumbnails="false"
         show-indicators-on-item
         show-item-navigators-on-hover
@@ -26,48 +26,48 @@ function redirectToPropertyDetails() {
     </template>
 
     <template #title>
-      {{ property.title }}
+      {{ laboratory.title }}
     </template>
 
     <template #content>
-      <p>{{ property.description }}</p>
+      <p>{{ laboratory.description }}</p>
 
       <div v-if="!showExtendedInfo">
-        <p class="font-semibold">{{ $n(property.price, 'currency') }}</p>
+        <p class="font-semibold">{{ $n(laboratory.price, 'currency') }}</p>
         <p>
           <i class="pi pi-map-marker" />
-          {{ property.location.city }} - {{ property.location.state }}
+          {{ laboratory.location.city }} - {{ laboratory.location.state }}
         </p>
       </div>
 
-      <div v-else class="property-card__extended-info">
+      <div v-else class="laboratory-card__extended-info">
         <div>
           <div class="font-medium">{{ $t('fields.price') }}</div>
-          <div>{{ $n(property.price, 'currency') }}</div>
+          <div>{{ $n(laboratory.price, 'currency') }}</div>
         </div>
         <div>
-          <div class="font-medium">{{ $t('properties.form.location') }}</div>
-          <div>{{ property.location.city }} - {{ property.location.state }}</div>
+          <div class="font-medium">{{ $t('laboratories.form.location') }}</div>
+          <div>{{ laboratory.location.city }} - {{ laboratory.location.state }}</div>
         </div>
         <div>
           <div class="font-medium">{{ $t('fields.size') }}</div>
-          <div>{{ property.size }}m²</div>
+          <div>{{ laboratory.size }}m²</div>
         </div>
         <div>
           <div class="font-medium">{{ $t('fields.bedrooms') }}</div>
-          <div>{{ property.bedrooms }}</div>
+          <div>{{ laboratory.bedrooms }}</div>
         </div>
         <div>
           <div class="font-medium">{{ $t('fields.bathrooms') }}</div>
-          <div>{{ property.bathrooms }}</div>
+          <div>{{ laboratory.bathrooms }}</div>
         </div>
         <div>
           <div class="font-medium">{{ $t('fields.type') }}</div>
-          <div>{{ property.type }}</div>
+          <div>{{ laboratory.type }}</div>
         </div>
         <div>
           <div class="font-medium">{{ $t('fields.availability') }}</div>
-          <div>{{ property.availability }}</div>
+          <div>{{ laboratory.availability }}</div>
         </div>
       </div>
     </template>
@@ -77,14 +77,14 @@ function redirectToPropertyDetails() {
         v-if="!showExtendedInfo"
         label="View"
         data-testid="view-button"
-        @click="redirectToPropertyDetails"
+        @click="redirectToLaboratoryDetails"
       />
     </template>
   </BaseCard>
 </template>
 
 <style scoped>
-.property-card__extended-info {
+.laboratory-card__extended-info {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

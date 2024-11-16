@@ -2,70 +2,70 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-type PropertyType = 'House' | 'Apartment'
+type laboratoryType = 'House' | 'Apartment'
 
 const router = useRouter()
 
 const location = ref('')
-const selectedPropertyType = ref<PropertyType>('House')
+const selectedLaboratoryType = ref<laboratoryType>('House')
 
-function selectPropertyType(type: PropertyType) {
-  selectedPropertyType.value = type
+function selectLaboratoryType(type: laboratoryType) {
+  selectedLaboratoryType.value = type
 }
 
-function redirectToPropertyAdvertise() {
-  router.push({ name: 'property-advertise' })
+function redirectToLaboratoryAdvertise() {
+  router.push({ name: 'laboratory-advertise' })
 }
 
-function redirectToPropertyList() {
+function redirectToLaboratoryList() {
   router.push({
-    name: 'properties-list',
-    query: { type: selectedPropertyType.value, location: location.value }
+    name: 'laboratories-list',
+    query: { type: selectedLaboratoryType.value, location: location.value }
   })
 }
 </script>
 
 <template>
-  <div class="property-search">
-    <BaseCard class="property-search__card">
+  <div class="laboratory-search">
+    <BaseCard class="laboratory-search__card">
       <template #content>
-        <div class="property-search__types">
+        <div class="laboratory-search__types">
           <div
             :class="[
-              'property-search__option',
-              { 'property-search__option--selected': selectedPropertyType === 'House' }
+              'laboratory-search__option',
+              { 'laboratory-search__option--selected': selectedLaboratoryType === 'House' }
             ]"
-            @click="selectPropertyType('House')"
+            @click="selectLaboratoryType('House')"
           >
             {{ $t('common.houses') }}
           </div>
           <div
             :class="[
-              'property-search__option',
-              { 'property-search__option--selected': selectedPropertyType === 'Apartment' }
+              'laboratory-search__option',
+              { 'laboratory-search__option--selected': selectedLaboratoryType === 'Apartment' }
             ]"
-            @click="selectPropertyType('Apartment')"
+            @click="selectLaboratoryType('Apartment')"
           >
             {{ $t('common.apartments') }}
           </div>
-          <div class="property-search__option" @click="redirectToPropertyAdvertise">
+          <div class="laboratory-search__option" @click="redirectToLaboratoryAdvertise">
             {{ $t('home.wantToSell') }}
           </div>
         </div>
 
-        <div class="property-search__buttons md:flex-row">
+        <div class="laboratory-search__buttons md:flex-row">
           <BaseInputIcon
             v-model="location"
             icon="pi pi-map-marker"
             class="w-full md:w-30rem"
-            :placeholder="$t('properties.list.filters.locationPlaceholder')"
+            :placeholder="$t('laboratories.list.filters.locationPlaceholder')"
             type="search"
-            @keyup.enter="redirectToPropertyList"
+            @keyup.enter="redirectToLaboratoryList"
           />
           <BaseButton
             class="w-full md:w-4"
             :label="$t('home.seeOffers', { count: 8 })"
-            @click="redirectToPropertyList"
+            @click="redirectToLaboratoryList"
           />
         </div>
       </template>
@@ -74,37 +74,37 @@ function redirectToPropertyList() {
 </template>
 
 <style scoped>
-.property-search {
+.laboratory-search {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 64px);
 }
-.property-search__card {
+.laboratory-search__card {
   max-width: 800px;
   margin: 0 auto 12rem auto;
 }
-.property-search__types {
+.laboratory-search__types {
   display: flex;
   gap: 2rem;
   margin-bottom: 1rem;
 }
-.property-search__option {
+.laboratory-search__option {
   cursor: pointer;
   font-weight: 600;
   color: var(--text-color-secondary);
   padding: 0.5rem;
 }
-.property-search__option:hover {
+.laboratory-search__option:hover {
   color: var(--text-primary-color);
   font-weight: 600;
 }
-.property-search__option--selected {
+.laboratory-search__option--selected {
   color: var(--text-primary-color);
   font-weight: 600;
   border-bottom: 2px solid var(--primary-color);
 }
-.property-search__buttons {
+.laboratory-search__buttons {
   display: flex;
   flex-direction: column;
   align-items: center;

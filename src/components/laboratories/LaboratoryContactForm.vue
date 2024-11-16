@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { useField, useForm } from 'vee-validate'
 import { boolean, object, string } from 'yup'
 import BaseInputTextarea from '@/components/wrappers/form/BaseInputTextarea.vue'
-import ReportAdDialog from '@/components/properties/ReportAdDialog.vue'
+import ReportAdDialog from '@/components/laboratories/ReportAdDialog.vue'
 
 withDefaults(defineProps<{ price: number }>(), {
   price: 0
@@ -36,17 +36,17 @@ const sendMessageToSeller = handleSubmit((values) => {
 })
 
 onBeforeMount(() => {
-  setFieldValue('message', t('properties.interestedInRealEstateContactMe'))
+  setFieldValue('message', t('laboratories.interestedInRealEstateContactMe'))
 })
 </script>
 
 <template>
-  <div class="property-contact-form">
+  <div class="laboratory-contact-form">
     <BaseCard>
       <template #title>
         <span class="text-4xl">{{ $n(price, 'currency') }}</span>
       </template>
-      <template #subtitle> {{ $t('properties.sendMessageToSeller') }} </template>
+      <template #subtitle> {{ $t('laboratories.sendMessageToSeller') }} </template>
       <template #content>
         <div class="grid">
           <div class="col-12">
@@ -87,7 +87,7 @@ onBeforeMount(() => {
           <div class="col-12 flex gap-2">
             <BaseCheckbox
               v-model="receiveContacts"
-              :label="$t('properties.receiveContactsFromRealEstate')"
+              :label="$t('laboratories.receiveContactsFromRealEstate')"
               :value="false"
               :error="errors.receiveContacts"
             />
@@ -101,7 +101,7 @@ onBeforeMount(() => {
     <div class="report-ad">
       <p class="report-ad__title" @click="reportAdDialogRef?.openDialog">
         <i class="pi pi-flag" style="font-size: 0.875rem" />
-        {{ $t('properties.reportThisAd') }}
+        {{ $t('laboratories.reportThisAd') }}
       </p>
     </div>
     <ReportAdDialog ref="reportAdDialogRef" />
@@ -109,7 +109,7 @@ onBeforeMount(() => {
 </template>
 
 <style scoped>
-.property-contact-form {
+.laboratory-contact-form {
   width: 32%;
 }
 .report-ad {
@@ -126,7 +126,7 @@ onBeforeMount(() => {
   text-decoration: underline;
 }
 @media (max-width: 1300px) {
-  .property-contact-form {
+  .laboratory-contact-form {
     width: 100%;
   }
 }

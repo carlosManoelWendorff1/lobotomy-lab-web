@@ -5,7 +5,7 @@
     "logout": "Sair",
     "settings": "Configurações",
     "home": "Início",
-    "properties": "Propriedades",
+    "laboratories": "Propriedades",
     "property": "propriedade",
     "advertise": "Anunciar",
     "help": "Ajuda",
@@ -17,12 +17,13 @@
     "save": "Salvar",
     "profile": "Perfil",
     "page": "página",
+    "book": "Reservar",
     "messages": {
       "sessionExpirationMessage": "Sua sessão expirou. Por favor, faça login novamente.",
       "internalServerError": "An internal server error occurred. Please try again later."
     }
   },
-  "properties": {
+  "laboratories": {
     "sendMessageToSeller": "Enviar Mensagem ao Vendedor",
     "receiveContactsFromRealEstate": "Quero receber contatos do Real Estate por e-mail, WhatsApp e outros canais",
     "interestedInRealEstateContactMe": "Olá, tenho interesse no imóvel. Por favor, entre em contato.",
@@ -96,7 +97,7 @@
         "title": "Título"
       },
       "messages": {
-        "errorFetchingProperties": "Erro ao buscar propriedades. Tente novamente mais tarde."
+        "errorFetchingLaboratories": "Erro ao buscar propriedades. Tente novamente mais tarde."
       }
     }
   },

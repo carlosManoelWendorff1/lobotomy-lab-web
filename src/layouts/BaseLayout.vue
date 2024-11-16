@@ -21,27 +21,27 @@ function redirectTo(name: string) {
 }
 
 const menubarItems = computed(() => [
+  // {
+  //   label: t('common.home'),
+  //   command: () => redirectTo('home')
+  // },
   {
-    label: t('common.home'),
-    command: () => redirectTo('home')
+    label: t('common.laboratories'),
+    command: () => redirectTo('laboratories-list')
   },
   {
-    label: t('common.properties'),
-    command: () => redirectTo('properties-list')
-  },
-  {
-    label: t('common.advertise'),
-    command: () => redirectTo('property-advertise')
-  },
-  {
-    label: t('common.help'),
-    items: [
-      {
-        label: t('common.security'),
-        route: '/security'
-      }
-    ]
+    label: t('common.book'),
+    command: () => redirectTo('laboratory-advertise')
   }
+  // {
+  //   label: t('common.help'),
+  //   items: [
+  //     {
+  //       label: t('common.security'),
+  //       route: '/security'
+  //     }
+  //   ]
+  // }
 ])
 
 const items = computed(() => [
@@ -69,7 +69,7 @@ const settingsDialogRef = ref<InstanceType<typeof SettingsDialog> | null>(null)
 <template>
   <BaseMenubar :model="menubarItems">
     <template #start>
-      <div class="menubar__start" @click="redirectTo('home')">Real Estate</div>
+      <div class="menubar__start" @click="redirectTo('home')">Lobotomy Lab</div>
     </template>
 
     <template #end>

@@ -6,7 +6,7 @@ defineProps<{ seller: Seller }>()
 
 <template>
   <BaseCard>
-    <template #title> {{ $t('properties.aboutTheSeller') }} </template>
+    <template #title> {{ $t('laboratories.aboutTheSeller') }} </template>
     <template #content>
       <div class="seller-card">
         <p class="seller-card__title">{{ seller.name }}</p>

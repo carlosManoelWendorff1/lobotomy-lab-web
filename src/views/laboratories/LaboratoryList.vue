@@ -1,22 +1,22 @@
 <script lang="ts" setup>
 import { computed, onBeforeMount, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { usePropertiesStore } from '@/stores/properties'
+import { useLaboratoriesStore } from '@/stores/laboratories'
 import { storeToRefs } from 'pinia'
 import { useRoute, useRouter } from 'vue-router'
 import BaseSidebar from '@/components/wrappers/menu/BaseSidebar.vue'
-import PropertyCard from '@/components/properties/PropertyCard.vue'
+import LaboratoryCard from '@/components/laboratories/LaboratoryCard.vue'
 import BaseBreadcrumb from '@/components/wrappers/misc/BaseBreadcrumb.vue'
 import BaseTag from '@/components/wrappers/misc/BaseTag.vue'
 import BaseInputDate from '@/components/wrappers/form/BaseInputDate.vue'
-import propertiesResolver from '@/utils/propertiesResolver'
-import type IPropertyFilters from '@/types/propertyFilters'
+import laboratoriesResolver from '@/utils/laboratoriesResolver'
+import type ILaboratoryFilters from '@/types/laboratoryFilters'
 
 const { t } = useI18n()
 const router = useRouter()
 const route = useRoute()
-const propertiesStore = usePropertiesStore()
-const { properties, isLoading } = storeToRefs(propertiesStore)
+const laboratoriesStore = useLaboratoriesStore()
+const { laboratories, isLoading } = storeToRefs(laboratoriesStore)
 
 const isCollapsed = ref(false)
 
@@ -26,29 +26,29 @@ function toggleSidebar() {
 
 const breadcrumbItems = [
   { label: t('common.home'), to: { name: 'home' } },
-  { label: t('common.properties') }
+  { label: t('common.laboratories') }
 ]
 
-const filters = ref<IPropertyFilters>({})
+const filters = ref<ILaboratoryFilters>({})
 
-async function getAllProperties() {
-  const activeFilters = propertiesResolver.getActiveFilters(filters.value)
+async function getAllLaboratories() {
+  const activeFilters = laboratoriesResolver.getActiveFilters(filters.value)
   router.push({ query: Object.fromEntries(activeFilters) })
-  await propertiesStore.getAllProperties(filters.value)
+  await laboratoriesStore.getAllLaboratories(filters.value)
 }
 
 async function clearFilters() {
   filters.value = {}
-  await getAllProperties()
+  await getAllLaboratories()
 }
 
 const activeFilters = computed(() => {
-  return propertiesResolver.formatActiveFilters(filters.value)
+  return laboratoriesResolver.formatActiveFilters(filters.value)
 })
 
 onBeforeMount(async () => {
   filters.value = route.query
-  await getAllProperties()
+  await getAllLaboratories()
 })
 </script>
 
@@ -57,127 +57,127 @@ onBeforeMount(async () => {
     <BaseSidebar v-model="isCollapsed">
       <template #default>
         <div class="section">
-          <div class="section__title">{{ $t('properties.list.filters.location') }}</div>
+          <div class="section__title">{{ $t('laboratories.list.filters.location') }}</div>
           <BaseInputIcon
             v-model="filters.location"
-            :placeholder="$t('properties.list.filters.locationPlaceholder')"
+            :placeholder="$t('laboratories.list.filters.locationPlaceholder')"
             icon="pi pi-map-marker"
             iconPosition="right"
             type="search"
-            @keyup.enter="getAllProperties"
+            @keyup.enter="getAllLaboratories"
           />
         </div>
 
         <div class="section">
-          <div class="section__title">{{ $t('properties.list.filters.priceRange') }}</div>
+          <div class="section__title">{{ $t('laboratories.list.filters.priceRange') }}</div>
           <div class="section__filters">
             <BaseInputNumber
               v-model="filters.minPrice"
-              :placeholder="$t('properties.list.from')"
+              :placeholder="$t('laboratories.list.from')"
               input-class="w-3"
               mode="currency"
               currency="USD"
               locale="en-US"
-              @update:modelValue="getAllProperties"
+              @update:modelValue="getAllLaboratories"
             />
             <BaseInputNumber
               v-model="filters.maxPrice"
-              :placeholder="$t('properties.list.to')"
+              :placeholder="$t('laboratories.list.to')"
               input-class="w-3"
               mode="currency"
               currency="USD"
               locale="en-US"
-              @update:modelValue="getAllProperties"
+              @update:modelValue="getAllLaboratories"
             />
           </div>
         </div>
 
         <div class="section">
-          <div class="section__title">{{ $t('properties.list.filters.yearBuilt') }}</div>
+          <div class="section__title">{{ $t('laboratories.list.filters.yearBuilt') }}</div>
           <div class="section__filters">
             <BaseInputDate
               v-model="filters.minYearBuilt"
-              :placeholder="$t('properties.list.from')"
+              :placeholder="$t('laboratories.list.from')"
               :min-date="new Date(1900, 0, 1)"
               :max-date="new Date()"
               view="year"
               dateFormat="yy"
               input-class="w-3"
-              @update:modelValue="getAllProperties"
+              @update:modelValue="getAllLaboratories"
             />
             <BaseInputDate
               v-model="filters.maxYearBuilt"
-              :placeholder="$t('properties.list.to')"
+              :placeholder="$t('laboratories.list.to')"
               :min-date="new Date(1900, 0, 1)"
               :max-date="new Date()"
               view="year"
               dateFormat="yy"
               input-class="w-3"
-              @update:modelValue="getAllProperties"
+              @update:modelValue="getAllLaboratories"
             />
           </div>
         </div>
 
         <div class="section">
-          <div class="section__title">{{ $t('properties.list.filters.size') }}</div>
+          <div class="section__title">{{ $t('laboratories.list.filters.size') }}</div>
           <div class="section__filters">
             <BaseInputNumber
               v-model="filters.minSize"
-              :placeholder="$t('properties.list.from')"
+              :placeholder="$t('laboratories.list.from')"
               input-class="w-3"
               suffix="m²"
-              @update:modelValue="getAllProperties"
+              @update:modelValue="getAllLaboratories"
             />
             <BaseInputNumber
               v-model="filters.maxSize"
-              :placeholder="$t('properties.list.to')"
+              :placeholder="$t('laboratories.list.to')"
               input-class="w-3"
               suffix="m²"
-              @update:modelValue="getAllProperties"
+              @update:modelValue="getAllLaboratories"
             />
           </div>
         </div>
 
         <div class="section">
-          <div class="section__title">{{ $t('properties.list.filters.bedrooms') }}</div>
+          <div class="section__title">{{ $t('laboratories.list.filters.bedrooms') }}</div>
           <BaseInputNumber
             v-model="filters.minBedrooms"
             placeholder="Minimum"
-            @update:modelValue="getAllProperties"
+            @update:modelValue="getAllLaboratories"
           />
         </div>
 
         <div class="section">
-          <div class="section__title">{{ $t('properties.list.filters.bathrooms') }}</div>
+          <div class="section__title">{{ $t('laboratories.list.filters.bathrooms') }}</div>
           <BaseInputNumber
             v-model="filters.minBathrooms"
             placeholder="Minimum"
-            @update:modelValue="getAllProperties"
+            @update:modelValue="getAllLaboratories"
           />
         </div>
 
         <div class="section">
-          <div class="section__title">{{ $t('properties.list.filters.sellerTypes') }}</div>
+          <div class="section__title">{{ $t('laboratories.list.filters.sellerTypes') }}</div>
           <BaseCheckboxGroup
             v-model="filters.sellerTypes"
             name="sellerTypes"
-            :options="propertiesResolver.sellerTypesOptions"
+            :options="laboratoriesResolver.sellerTypesOptions"
           />
         </div>
 
         <div class="p-3">
-          <div class="section__title">{{ $t('properties.list.filters.amenities') }}</div>
+          <div class="section__title">{{ $t('laboratories.list.filters.amenities') }}</div>
           <BaseCheckboxGroup
             v-model="filters.amenities"
             name="amenities"
-            :options="propertiesResolver.amenitiesOptions"
+            :options="laboratoriesResolver.amenitiesOptions"
           />
         </div>
       </template>
 
       <template #footer>
         <BaseButton
-          :label="$t('properties.list.clearFilters')"
+          :label="$t('laboratories.list.clearFilters')"
           severity="secondary"
           class="w-full"
           :loading="isLoading"
@@ -201,34 +201,36 @@ onBeforeMount(async () => {
         <div class="top-bar__filters">
           <BaseInputIcon
             v-model="filters.title"
-            :placeholder="$t('properties.list.filters.titlePlaceholder')"
+            :placeholder="$t('laboratories.list.filters.titlePlaceholder')"
             icon="pi pi-search"
             type="search"
             icon-position="left"
             class="w-full"
-            @keyup.enter="getAllProperties"
+            @keyup.enter="getAllLaboratories"
           />
           <BaseDropdown
             v-model="filters.sortBy"
-            :options="propertiesResolver.sortByOptions"
-            :placeholder="$t('properties.list.mostRelevant')"
+            :options="laboratoriesResolver.sortByOptions"
+            :placeholder="$t('laboratories.list.mostRelevant')"
             option-label="label"
             option-value="value"
-            @update:modelValue="getAllProperties"
+            @update:modelValue="getAllLaboratories"
           />
         </div>
       </div>
-      <div class="properties-list">
+      <div class="laboratories-list">
         <header class="mb-4">
           <BaseBreadcrumb :model="breadcrumbItems" />
-          <h2 class="mb-1">{{ $t('common.properties') }}</h2>
-          <p class="m-0">{{ $t('properties.list.description', { count: properties.length }) }}</p>
+          <h2 class="mb-1">{{ $t('common.laboratories') }}</h2>
+          <p class="m-0">
+            {{ $t('laboratories.list.description', { count: laboratories.length }) }}
+          </p>
         </header>
-        <div v-if="isLoading" class="properties-list__cards">
+        <div v-if="isLoading" class="laboratories-list__cards">
           <BaseSkeleton v-for="n in 8" :key="n" width="23rem" height="36rem" border-radius="8px" />
         </div>
-        <div v-else class="properties-list__skeletons">
-          <PropertyCard v-for="property in properties" :key="property.id" :property />
+        <div v-else class="laboratories-list__skeletons">
+          <laboratoryCard v-for="laboratory in laboratories" :key="laboratory.id" :laboratory />
         </div>
       </div>
     </div>
@@ -266,13 +268,13 @@ onBeforeMount(async () => {
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.properties-list {
+.laboratories-list {
   padding: 2rem;
   height: calc(100vh - 134px);
   overflow-y: auto;
 }
-.properties-list__cards,
-.properties-list__skeletons {
+.laboratories-list__cards,
+.laboratories-list__skeletons {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;

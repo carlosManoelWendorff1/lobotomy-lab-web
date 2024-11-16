@@ -1,7 +1,7 @@
 import type Location from '@/types/models/Location'
 import type Seller from '@/types/models/Seller'
 
-export default class Property {
+export default class Laboratory {
   constructor(
     public title: string,
     public description: string,

@@ -3,19 +3,19 @@ import { VueWrapper, mount } from '@vue/test-utils'
 
 import PrimeVue from 'primevue/config'
 import router from '@/router'
-import PropertyCard from '@/components/properties/PropertyCard.vue'
-import { property as mockProperty } from '@/data/properties.json'
+import laboratoryCard from '@/components/laboratories/laboratoryCard.vue'
+import { laboratory as mocklaboratory } from '@/data/laboratories.json'
 
-describe('PropertyCard', () => {
+describe('laboratoryCard', () => {
   let wrapper: VueWrapper
 
   beforeEach(async () => {
-    wrapper = mount(PropertyCard, {
+    wrapper = mount(laboratoryCard, {
       global: {
         plugins: [PrimeVue, router]
       },
       props: {
-        property: mockProperty,
+        laboratory: mocklaboratory,
         showExtendedInfo: false
       },
       mocks: {
@@ -24,20 +24,20 @@ describe('PropertyCard', () => {
     })
   })
 
-  it("renders the property's data successfully", async () => {
+  it("renders the laboratory's data successfully", async () => {
     const wrapperHtml = wrapper.html()
-    expect(wrapperHtml).toContain(mockProperty.title)
-    expect(wrapperHtml).toContain(mockProperty.description)
-    expect(wrapperHtml).toContain(mockProperty.price)
+    expect(wrapperHtml).toContain(mocklaboratory.title)
+    expect(wrapperHtml).toContain(mocklaboratory.description)
+    expect(wrapperHtml).toContain(mocklaboratory.price)
   })
 
-  it('redirects to the property details page when clicked on view button', async () => {
+  it('redirects to the laboratory details page when clicked on view button', async () => {
     const push = vi.spyOn(router, 'push')
     await wrapper.find('[data-testid="view-button"]').trigger('click')
     expect(push).toHaveBeenCalledTimes(1)
     expect(push).toHaveBeenCalledWith({
-      name: 'property-details',
-      params: { id: mockProperty.id }
+      name: 'laboratory-details',
+      params: { id: mocklaboratory.id }
     })
   })
 })

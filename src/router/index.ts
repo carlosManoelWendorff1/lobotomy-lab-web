@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import propertiesRoutes from '@/router/properties/routes'
+import laboratoriesRoutes from '@/router/laboratories/routes'
 import middlewarePipeline, {
   type MiddlewareContext,
   type MiddlewareFunction
@@ -29,7 +29,7 @@ const router = createRouter({
             title: 'Security'
           }
         },
-        ...propertiesRoutes
+        ...laboratoriesRoutes
       ]
     },
     {

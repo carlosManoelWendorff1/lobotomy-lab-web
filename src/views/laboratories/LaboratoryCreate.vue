@@ -3,20 +3,20 @@ import { useI18n } from 'vue-i18n'
 import { inject } from 'vue'
 import { useField, useForm } from 'vee-validate'
 import { object, string, number, array } from 'yup'
-import { amenitiesOptions, propertyTypesOptions } from '@/utils/propertiesResolver'
-import { usePropertiesStore } from '@/stores/properties'
+import { amenitiesOptions, laboratoryTypesOptions } from '@/utils/laboratoriesResolver'
+import { useLaboratoriesStore } from '@/stores/laboratories'
 import { useDebounceFn } from '@vueuse/core'
 import useBaseToast from '@/composables/useBaseToast'
 import BaseInlineMessage from '@/components/wrappers/form/BaseInlineMessage.vue'
 import BaseSelect from '@/components/wrappers/form/BaseSelect.vue'
 import BaseChips from '@/components/wrappers/form/BaseChips.vue'
-import type Property from '@/types/models/Property'
+import type Laboratory from '@/types/models/Laboratory'
 import type { ILocationGateway } from '@/gateways/LocationGateway'
 
 const locationGateway = inject<ILocationGateway>('locationGateway')!
 
 const toast = useBaseToast()
-const propertiesStore = usePropertiesStore()
+const laboratoriesStore = useLaboratoriesStore()
 const { t } = useI18n()
 
 const validationSchema = object({
@@ -64,25 +64,25 @@ const { value: city } = useField('location.city')
 const { value: state } = useField('location.state')
 const { value: country } = useField('location.country')
 
-const onSubmit = handleSubmit(async (property) => {
-  await propertiesStore.createProperty(property as Property)
+const onSubmit = handleSubmit(async (laboratory) => {
+  await laboratoriesStore.createLaboratory(laboratory as Laboratory)
 })
 
 const getLocationByZipCode = useDebounceFn(async () => {
   try {
     const location = await locationGateway.getByZipCode(zipCode.value as string)
     setFieldValue('location', location)
-    toast.success({ message: t('properties.form.messages.locationFound') })
+    toast.success({ message: t('laboratories.form.messages.locationFound') })
   } catch {
-    toast.error({ message: t('properties.form.messages.locationNotFound') })
+    toast.error({ message: t('laboratories.form.messages.locationNotFound') })
   }
 }, 1000)
 </script>
 
 <template>
   <div class="form-container">
-    <h1 data-testid="title" class="mb-0">{{ $t('properties.form.title') }}</h1>
-    <p data-testid="subtitle" class="mb-4">{{ $t('properties.form.subtitle') }}</p>
+    <h1 data-testid="title" class="mb-0">{{ $t('laboratories.form.title') }}</h1>
+    <p data-testid="subtitle" class="mb-4">{{ $t('laboratories.form.subtitle') }}</p>
     <form @submit.prevent="onSubmit">
       <div class="grid">
         <div class="col-12 md:col-6">
@@ -152,7 +152,7 @@ const getLocationByZipCode = useDebounceFn(async () => {
             :error="errors.type"
             :label="$t('fields.type')"
             :placeholder="$t('fields.type')"
-            :options="propertyTypesOptions"
+            :options="laboratoryTypesOptions"
             option-label="label"
             option-value="value"
           />
@@ -230,7 +230,7 @@ const getLocationByZipCode = useDebounceFn(async () => {
         <div class="col-12 mt-4">
           <BaseInlineMessage
             severity="info"
-            :text="$t('properties.form.propertyDataEditRestriction')"
+            :text="$t('laboratories.form.laboratoryDataEditRestriction')"
           />
         </div>
 
@@ -240,7 +240,7 @@ const getLocationByZipCode = useDebounceFn(async () => {
             icon="pi pi-check"
             class="w-6 mt-4 md:w-3"
             :label="$t('common.save')"
-            :loading="propertiesStore.isLoading"
+            :loading="laboratoriesStore.isLoading"
           />
         </div>
       </div>

@@ -5,7 +5,7 @@
     "logout": "Logout",
     "settings": "Settings",
     "home": "Home",
-    "properties": "Properties",
+    "laboratories": "Laboratories",
     "property": "property",
     "advertise": "Advertise",
     "help": "Help",
@@ -17,12 +17,13 @@
     "save": "Save",
     "profile": "Profile",
     "page": "page",
+    "book": "Book",
     "messages": {
       "sessionExpirationMessage": "Your session has expired. Please log in again.",
       "internalServerError": "An internal server error occurred. Please try again later."
     }
   },
-  "properties": {
+  "laboratories": {
     "sendMessageToSeller": "Send a message to the seller",
     "receiveContactsFromRealEstate": "I agree to receive contacts from Real Estate",
     "interestedInRealEstateContactMe": "Hello, I'm interested in this property. Please get in touch.",
@@ -51,7 +52,7 @@
       }
     },
     "list": {
-      "description": "No properties found | 1 property found | {count} properties found",
+      "description": "No laboratories found | 1 property found | {count} laboratories found",
       "mostRelevant": "Most Relevant",
       "priceLowToHigh": "Price: Low to High",
       "priceHighToLow": "Price: High to Low",
@@ -95,7 +96,7 @@
         "title": "Title"
       },
       "messages": {
-        "errorFetchingProperties": "There was an error fetching properties. Please try again later."
+        "errorFetchingLaboratories": "There was an error fetching laboratories. Please try again later."
       }
     }
   },
