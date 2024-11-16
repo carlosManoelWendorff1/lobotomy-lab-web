@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": "1b4e9cf8-fd1b-426d-a646-fa8af5126593",
+      "fullName": "John Doe",
+      "email": "john.doe@gmail.com",
+      "password": "123456",
+      "avatarUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200",
+      "accessToken": "1234567890"
+    }
+  ]
+}

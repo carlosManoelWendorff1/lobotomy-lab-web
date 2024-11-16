@@ -1,0 +1,203 @@
+{
+  "common": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "settings": "Settings",
+    "home": "Home",
+    "properties": "Properties",
+    "property": "property",
+    "advertise": "Advertise",
+    "help": "Help",
+    "security": "Security",
+    "notFound": "Not Found",
+    "networkError": "Network Error",
+    "houses": "Houses",
+    "apartments": "Apartments",
+    "save": "Save",
+    "profile": "Profile",
+    "page": "page",
+    "messages": {
+      "sessionExpirationMessage": "Your session has expired. Please log in again.",
+      "internalServerError": "An internal server error occurred. Please try again later."
+    }
+  },
+  "properties": {
+    "sendMessageToSeller": "Send a message to the seller",
+    "receiveContactsFromRealEstate": "I agree to receive contacts from Real Estate",
+    "interestedInRealEstateContactMe": "Hello, I'm interested in this property. Please get in touch.",
+    "aboutTheSeller": "About the Seller",
+    "reportThisAd": "Report this ad",
+    "reportAd": "Report Ad",
+    "reportAdIrregularitiesPrompt": "Does this ad have irregularities? Let us know!",
+    "reportDescriptionPlaceholder": "Describe your complaint in detail (minimum 30 characters).",
+    "dataSharingConsent": "I authorize Real Estate to share my data with partners to resolve the issue",
+    "type": "Type",
+    "availability": "Availability",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "form": {
+      "title": "Advertise your property",
+      "subtitle": "Fill in the details of the property you want to advertise",
+      "details": "Details",
+      "location": "Location",
+      "review": "Review",
+      "propertyDataEditRestriction": "You cannot edit the property data after creating the advertisement. Please confirm the data before proceeding.",
+      "messages": {
+        "propertyCreated": "Property created successfully!",
+        "locationFound": "Location found successfully!",
+        "locationNotFound": "Location not found.",
+        "errorSavingProperty": "Error saving property. Please try again later."
+      }
+    },
+    "list": {
+      "description": "No properties found | 1 property found | {count} properties found",
+      "mostRelevant": "Most Relevant",
+      "priceLowToHigh": "Price: Low to High",
+      "priceHighToLow": "Price: High to Low",
+      "newest": "Newest",
+      "from": "from",
+      "to": "to",
+      "clearFilters": "Clear Filters",
+      "filters": {
+        "location": "Location",
+        "locationPlaceholder": "Type your city or state",
+        "titlePlaceholder": "Type the property title",
+        "type": "Type",
+        "minPrice": "Min Price",
+        "maxPrice": "Max Price",
+        "minYearBuilt": "Min Year Built",
+        "maxYearBuilt": "Max Year Built",
+        "minSize": "Min Size",
+        "maxSize": "Max Size",
+        "minBedrooms": "Min Bedrooms",
+        "minBathrooms": "Min Bathrooms",
+        "priceRange": "Price Range",
+        "yearBuilt": "Year Built",
+        "size": "Size (m²)",
+        "bedrooms": "Bedrooms",
+        "bathrooms": "Bathrooms",
+        "sellerTypes": "Seller Types",
+        "realEstateAgency": "Real Estate Agency",
+        "privateSeller": "Private Seller",
+        "developer": "Developer",
+        "builder": "Builder",
+        "investor": "Investor",
+        "amenities": "Amenities",
+        "garage": "Garage",
+        "garden": "Garden",
+        "pool": "Pool",
+        "elevator": "Elevator",
+        "terrace": "Terrace",
+        "house": "House",
+        "apartment": "Apartment",
+        "sortBy": "Sort By",
+        "title": "Title"
+      },
+      "messages": {
+        "errorFetchingProperties": "There was an error fetching properties. Please try again later."
+      }
+    }
+  },
+  "home": {
+    "seeOffers": "See Offers ({count})",
+    "wantToSell": "Want to sell your property?"
+  },
+  "security": {
+    "title": "Security is a serious <br /> <span class=\"emphasis\"> matter for us.</span>",
+    "description": "Real Estate is the best place to buy, sell, and take care <br /> of your property. We've prepared this content to make <br /> your negotiation even safer and smoother.",
+    "readCarefully": "<span class=\"emphasis\">Read it carefully</span>, and happy negotiating! ;)"
+  },
+  "login": {
+    "messages": {
+      "invalidCredentials": "Invalid username or password. Please try again."
+    },
+    "dontHaveAccount": "Don't have an account?"
+  },
+  "notFound": {
+    "description": "The {resource} you are looking for does not exist.",
+    "goToHomePage": "Go to the home page"
+  },
+  "networkError": {
+    "title": "Uh-oh!",
+    "description-start": "It looks like you're experiencing some network issues, please take a breath and",
+    "description-link": "click here",
+    "description-end": "to try again."
+  },
+  "register": {
+    "alreadyHaveAccount": "Already have an account?",
+    "agreement": "By clicking Register, you agree to our",
+    "termsAndConditions": "Terms and Conditions",
+    "messages": {
+      "userRegistered": "User registered successfully!",
+      "errorRegisteringUser": "Error registering user. Please try again later."
+    }
+  },
+  "settings": {
+    "english": "English",
+    "portuguese": "Portuguese",
+    "language": "Language",
+    "selectLanguage": "Select Language",
+    "theme": "Theme",
+    "selectTheme": "Select Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "messages": {
+      "settingsSaved": "Settings saved successfully!"
+    }
+  },
+  "fields": {
+    "name": "Name",
+    "message": "Message",
+    "fullName": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "passwordConfirmation": "Password Confirmation",
+    "title": "Title",
+    "description": "Description",
+    "price": "Price",
+    "size": "Size",
+    "imageSources": "Image URL",
+    "type": "Type",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "amenities": "Amenities",
+    "availability": "Availability",
+    "sellerType": "Seller Type",
+    "location": {
+      "zipCode": "Zip Code",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country"
+    },
+    "phone": "Phone",
+    "receiveContacts": "Receive Contacts",
+    "dataSharingConsent": "Data Sharing Consent"
+  },
+  "validation": {
+    "required": "Please fill out the {field} field",
+    "oneOf": "The value entered for {field} is not valid",
+    "notOneOf": "{field} cannot be one of the following: {values}",
+    "length": "{field} must be exactly {length} characters long",
+    "min": "{field} must be at least {min} characters long",
+    "max": "{field} must be no more than {max} characters long",
+    "matches": "The value entered for {field} is not in the correct format",
+    "email": "Please enter a valid email address for {field}",
+    "url": "Please enter a valid URL for {field}",
+    "trim": "{field} should not have leading or trailing spaces",
+    "lowercase": "{field} should be in lowercase letters",
+    "uppercase": "{field} should be in uppercase letters",
+    "minValue": "{field} must be greater than {min}",
+    "maxValue": "{field} must be less than {max}",
+    "positive": "{field} must be a positive number",
+    "negative": "{field} must be a negative number",
+    "integer": "{field} must be an integer",
+    "minDate": "{field} must be a date after {min}",
+    "maxDate": "{field} must be a date before {max}",
+    "boolean": "{field} must be {value}",
+    "noUnknown": "{field} has some unrecognized keys: {unknown}",
+    "arrayMin": "{field} must have at least {min} items",
+    "arrayMax": "{field} must have no more than {max} items"
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "common": {
+    "login": "Entrar",
+    "register": "Registrar",
+    "logout": "Sair",
+    "settings": "Configurações",
+    "home": "Início",
+    "properties": "Propriedades",
+    "property": "propriedade",
+    "advertise": "Anunciar",
+    "help": "Ajuda",
+    "security": "Segurança",
+    "notFound": "Não Encontrado",
+    "networkError": "Erro de Rede",
+    "houses": "Casas",
+    "apartments": "Apartamentos",
+    "save": "Salvar",
+    "profile": "Perfil",
+    "page": "página",
+    "messages": {
+      "sessionExpirationMessage": "Sua sessão expirou. Por favor, faça login novamente.",
+      "internalServerError": "An internal server error occurred. Please try again later."
+    }
+  },
+  "properties": {
+    "sendMessageToSeller": "Enviar Mensagem ao Vendedor",
+    "receiveContactsFromRealEstate": "Quero receber contatos do Real Estate por e-mail, WhatsApp e outros canais",
+    "interestedInRealEstateContactMe": "Olá, tenho interesse no imóvel. Por favor, entre em contato.",
+    "aboutTheSeller": "Sobre o Vendedor",
+    "reportThisAd": "Denunciar este Anúncio",
+    "reportAd": "Denunciar Anúncio",
+    "reportAdIrregularitiesPrompt": "Esse anúncio possui irregularidades? Conte para a gente!",
+    "reportDescriptionPlaceholder": "Descreva com detalhes sua denúncia (mínimo 30 caracteres).",
+    "dataSharingConsent": "Autorizo que o Real Estate compartilhe meus dados com parceiros para resolver a questão",
+    "type": "Tipo",
+    "availability": "Disponibilidade",
+    "bedrooms": "Quartos",
+    "bathrooms": "Banheiros",
+    "form": {
+      "title": "Anunciar Imóvel",
+      "subtitle": "Preencha os campos abaixo para anunciar seu imóvel",
+      "details": "Detalhes",
+      "location": "Localização",
+      "review": "Revisão",
+      "propertyDataEditRestriction": "Não é possível editar os dados do imóvel após criar o anúncio. Confirme os dados antes de continuar.",
+      "messages": {
+        "propertyCreated": "Propriedade criada com sucesso!",
+        "locationFound": "Localização encontrada com sucesso!",
+        "pleaseFillAllRequiredFields": "Por favor, preencha todos os campos obrigatórios.",
+        "locationNotFound": "Localização não encontrada.",
+        "errorSavingProperty": "Erro ao salvar propriedade. Tente novamente mais tarde."
+      }
+    },
+    "list": {
+      "description": "Nenhuma propriedade encontrada | 1 propriedade encontrada | {count} propriedades encontradas",
+      "mostRelevant": "Mais Relevante",
+      "priceLowToHigh": "Preço: Menor para Maior",
+      "priceHighToLow": "Preço: Maior para Menor",
+      "newest": "Mais Novo",
+      "from": "de",
+      "to": "para",
+      "clearFilters": "Limpar Filtros",
+      "filters": {
+        "location": "Localização",
+        "locationPlaceholder": "Digite sua cidade ou estado",
+        "titlePlaceholder": "Digite o título do imóvel",
+        "type": "Tipo de Imóvel",
+        "minPrice": "Preço Mínimo",
+        "maxPrice": "Preço Máximo",
+        "minYearBuilt": "Ano de Construção Mínimo",
+        "maxYearBuilt": "Ano de Construção Máximo",
+        "minSize": "Tamanho Mínimo",
+        "maxSize": "Tamanho Máximo",
+        "minBedrooms": "Quartos Mínimos",
+        "minBathrooms": "Banheiros Mínimos",
+        "priceRange": "Faixa de Preço",
+        "yearBuilt": "Ano de Construção",
+        "size": "Tamanho (m²)",
+        "bedrooms": "Quartos",
+        "bathrooms": "Banheiros",
+        "sellerTypes": "Tipos de Vendedor",
+        "realEstateAgency": "Imobiliária",
+        "privateSeller": "Vendedor Particular",
+        "developer": "Incorporadora",
+        "builder": "Construtora",
+        "investor": "Investidor",
+        "amenities": "Comodidades",
+        "garage": "Garagem",
+        "garden": "Jardim",
+        "pool": "Piscina",
+        "elevator": "Elevador",
+        "terrace": "Terraço",
+        "house": "Casa",
+        "apartment": "Apartamento",
+        "sortBy": "Ordenar por",
+        "title": "Título"
+      },
+      "messages": {
+        "errorFetchingProperties": "Erro ao buscar propriedades. Tente novamente mais tarde."
+      }
+    }
+  },
+  "home": {
+    "seeOffers": "Ver Ofertas ({count})",
+    "wantToSell": "Quer vender seu imóvel?"
+  },
+  "security": {
+    "title": "Segurança para gente <br /> <span class=\"emphasis\">é assunto sério.</span>",
+    "description": "O Real Estate é o melhor lugar para comprar, vender e cuidar <br /> do seu imóvel. Preparamos esse conteúdo para tornar  <br /> sua negociação ainda mais segura e tranquila.",
+    "readCarefully": "<span class=\"emphasis\">Dá uma lida com atenção</span>, e boa negociação ;)"
+  },
+  "login": {
+    "messages": {
+      "invalidCredentials": "Credenciais inválidas. Tente novamente."
+    },
+    "dontHaveAccount": "Não possui uma conta?"
+  },
+  "notFound": {
+    "description": "A {resource} que você procura não existe.",
+    "goToHomePage": "Ir para a página inicial"
+  },
+  "networkError": {
+    "title": "Uh-oh!",
+    "description-start": "Parece que você está enfrentando alguns problemas de rede, por favor, respire fundo e",
+    "description-link": "clique aqui",
+    "description-end": "para tentar novamente."
+  },
+  "register": {
+    "alreadyHaveAccount": "Já possui uma conta?",
+    "agreement": "Ao clicar em Registrar, você concorda com nossos",
+    "termsAndConditions": "Termos e Condições",
+    "messages": {
+      "userRegistered": "Usuário registrado com sucesso!",
+      "errorRegisteringUser": "Erro ao registrar usuário. Tente novamente mais tarde."
+    }
+  },
+  "settings": {
+    "english": "Inglês",
+    "portuguese": "Português",
+    "language": "Idioma",
+    "selectLanguage": "Selecione o Idioma",
+    "theme": "Tema",
+    "selectTheme": "Selecione o Tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "messages": {
+      "settingsSaved": "Configurações salvas com sucesso!"
+    }
+  },
+  "fields": {
+    "name": "Nome",
+    "message": "Mensagem",
+    "fullName": "Nome Completo",
+    "email": "Email",
+    "password": "Senha",
+    "passwordConfirmation": "Confirmação de Senha",
+    "title": "Título",
+    "description": "Descrição",
+    "price": "Preço",
+    "size": "Tamanho",
+    "imageSources": "URL da Imagem",
+    "type": "Tipo",
+    "bedrooms": "Quartos",
+    "bathrooms": "Banheiros",
+    "amenities": "Comodidades",
+    "availability": "Disponibilidade",
+    "sellerType": "Tipo de Vendedor",
+    "location": {
+      "zipCode": "CEP",
+      "address": "Endereço",
+      "city": "Cidade",
+      "state": "Estado",
+      "country": "País"
+    },
+    "phone": "Telefone",
+    "receiveContacts": "Receber Contatos",
+    "dataSharingConsent": "Consentimento de Compartilhamento de Dados"
+  },
+  "validation": {
+    "required": "Por favor, preencha o campo {field}",
+    "oneOf": "O valor inserido para {field} não é válido",
+    "notOneOf": "{field} não pode ser um dos seguintes valores: {values}",
+    "length": "{field} deve ter exatamente {length} caracteres",
+    "min": "{field} deve ter pelo menos {min} caracteres",
+    "max": "{field} deve ter no máximo {max} caracteres",
+    "matches": "O valor inserido para {field} não está no formato correto",
+    "email": "Por favor, insira um endereço de email válido para {field}",
+    "url": "Por favor, insira uma URL válida para {field}",
+    "trim": "{field} não deve conter espaços em branco no início ou no fim",
+    "lowercase": "{field} deve estar em letras minúsculas",
+    "uppercase": "{field} deve estar em letras maiúsculas",
+    "minValue": "{field} deve ser maior que {min}",
+    "maxValue": "{field} deve ser menor que {max}",
+    "positive": "{field} deve ser um número positivo",
+    "negative": "{field} deve ser um número negativo",
+    "integer": "{field} deve ser um número inteiro",
+    "minDate": "{field} deve ser uma data após {min}",
+    "maxDate": "{field} deve ser uma data antes de {max}",
+    "boolean": "{field} deve ser {value}",
+    "noUnknown": "{field} possui algumas chaves não reconhecidas: {unknown}",
+    "arrayMin": "{field} deve ter pelo menos {min} itens",
+    "arrayMax": "{field} deve ter no máximo {max} itens"
+  }
+}

@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BaseInputText > renders properly 1`] = `
+"<div>
+  <!--v-if--><input class="p-inputtext p-component w-full" aria-invalid="false" id="0" data-pc-name="inputtext" data-pc-section="root">
+  <!--v-if-->
+</div>"
+`;
+
+exports[`BaseInputText > renders the error message when input is invalid 1`] = `"<div><label for="3">Name</label><input class="p-inputtext p-component p-invalid w-full" aria-invalid="true" id="3" data-pc-name="inputtext" data-pc-section="root" aria-labelledby="3-error"><small class="p-error" id="3-error" aria-live="assertive">This field is required</small></div>"`;
